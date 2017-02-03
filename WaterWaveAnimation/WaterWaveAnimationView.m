@@ -55,6 +55,12 @@
     //        firstWaveLayer.strokeColor = UIColor.blue.cgColor
     self.firstWaveLayer.strokeStart = 0.0;
     self.firstWaveLayer.strokeEnd = 0.8;
+    // 设置闭环的颜色
+    self.secondWaveLayer.fillColor = [UIColor colorWithRed:73/255.0 green:142/255.0 blue:178/255.0 alpha:0.5].CGColor;
+    // 设置边缘线的颜色
+    //        secondWaveLayer.strokeColor = UIColor.blue.cgColor
+    self.secondWaveLayer.strokeStart = 0.0;
+    self.secondWaveLayer.strokeEnd = 0.8;
     [self.layer addSublayer:self.firstWaveLayer];
     [self.layer addSublayer:self.secondWaveLayer];
     
@@ -95,7 +101,7 @@
     // 创建一个路径
     UIBezierPath * path2 = [UIBezierPath bezierPath];
     CGFloat y2 = self.currentK;
-    [path2 moveToPoint:CGPointMake(0, y)];
+    [path2 moveToPoint:CGPointMake(0, y2)];
     
     for (int i=0; i<self.waterWaveWidth; i++) {
         y2 = self.waveA * sin(self.waveW * i + self.offsetX - self.waterWaveWidth/2) + self.currentK;

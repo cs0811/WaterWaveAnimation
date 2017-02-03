@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    WaterWaveAnimationView * waterWave = [[WaterWaveAnimationView alloc] initWithFrame:CGRectMake(50, 200, 200, 300)];
+    WaterWaveAnimationView * waterWave = [[WaterWaveAnimationView alloc] initWithFrame:CGRectMake(0, 200, CGRectGetWidth(self.view.bounds), 300)];
     [self.view addSubview:waterWave];
 }
 
